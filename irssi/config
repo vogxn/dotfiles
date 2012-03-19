@@ -202,5 +202,6 @@ settings = {
     autolog_level = "ALL -CRAP -CLIENTCRAP -CTCPS";
     theme = "madcow.theme";
   };
+  "perl/core/scripts" = { nicklist_automode = "SCREEN"; };
 };
 logs = { };
