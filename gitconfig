@@ -1,0 +1,28 @@
+[user]
+	name = Rohit Yadav
+	email = rohityadav89@gmail.com
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 793x741+170+86
+	history-view-vpane-position = 435
+	main-window-view = HistoryView
+	file-view-vpane-position = 674
+#[core]
+#	gitproxy = gitproxy
+
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+
+[format]
+	signoff = true
+[sendemail]
+	smtpserver = /usr/bin/msmtp #smtp.gmail.com
+#	smtpserverport = 587
+#	smtpencryption = tls
+#	smtpuser = rohityadav89@gmail.com
+
