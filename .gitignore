@@ -1,3 +1,5 @@
 *.swp
 *~
 vim/.netrwhis
+irrsi/away.log
+irssi/*.autosave
