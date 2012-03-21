@@ -92,7 +92,7 @@ x(){ ssh -C l33t@10.3.11.250 -v -p 1123;}
 backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-backup.sh;}
 todonow() { vim /media/chandrama/Rohit/ToDos/money;}
 
-userl=`w -s | grep pts | wc -l`
+userl=`ps aux | grep ssh | grep priv | wc -l`
 if [ $userl -gt 0 ]
 then
 `echo "ALERT someone has remotely logged in" | festival --tts` &

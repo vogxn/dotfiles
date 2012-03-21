@@ -200,7 +200,7 @@ settings = {
     autolog = "yes";
     autolog_path = "~/irclogs/$0/$0.%Y-%m-%d.log";
     autolog_level = "ALL -CRAP -CLIENTCRAP -CTCPS";
-    theme = "madcow.theme";
+    theme = "xchat";
   };
   "perl/core/scripts" = { nicklist_automode = "SCREEN"; };
 };

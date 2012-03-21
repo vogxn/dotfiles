@@ -3,6 +3,24 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+set noswapfile
+
+"  Text Formatting
+
+set autoindent
+set smartindent
+set nowrap
+
+set softtabstop=2
+set shiftwidth=2
+set tabstop=4
+set expandtab
+
+set nosmarttab
+set formatoptions+=n       " support for numbered/bullet lists
+set textwidth=80           " wrap at 80 chars by default
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic settings, normally set by default
 set nocompatible
@@ -19,6 +37,8 @@ behave xterm
 " Custom settings
 set laststatus=2 " Always show status bar
 set ruler " Show line/col
+set nolazyredraw           " turn off lazy redraw
+set number                 " line numbers
 set statusline=%F%m%r%h%w\ %=[ff=%{&ff}]\ [ft=%Y]\ [asc=\%3.3b/0x\%02.2B]\ [%4l,%4v][%3p%%][len=%L][buf=%n]
 set textwidth=78 " Word wrapping
 set title " Xterm title bar
@@ -49,13 +69,6 @@ map <Leader>k <C-w>k<C-w>_
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sudo make me a sandwich
 cmap w!! %!sudo tee > /dev/null %
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tab width is 4 and tabs are inserted as spaces
-set tabstop=8 " Hard tabs are 8 chars
-set softtabstop=4 " Tab key indents by 4 chars
-set shiftwidth=4 " Autoindent by 4 chars
-set expandtab " Use spaces instead of tabs
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Look and feel options
