@@ -91,6 +91,7 @@ z(){ ssh -C2qTnN -D 8080 l33t@10.3.11.250 -v -p 1123;};
 x(){ ssh -C l33t@10.3.11.250 -v -p 1123;}
 backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-backup.sh;}
 todonow() { vim /media/chandrama/Rohit/ToDos/money;}
+ideah() { vim /media/chandrama/Rohit/ToDos/idea;}
 
 userl=`ps aux | grep ssh | grep priv | wc -l`
 if [ $userl -gt 0 ]

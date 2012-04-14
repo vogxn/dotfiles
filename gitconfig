@@ -17,6 +17,7 @@
   co = checkout
   df = diff
   lg = log -p
+  hist = log --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
 
 [format]
 	signoff = true
