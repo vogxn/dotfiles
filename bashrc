@@ -89,6 +89,7 @@ fi
 
 z(){ ssh -C2qTnN -D 8080 l33t@10.3.11.250 -v -p 1123;};
 x(){ ssh -C l33t@10.3.11.250 -v -p 1123;}
+y(){ ssh antrix@71.19.150.199 -Cv -p 1123; }
 backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-backup.sh;}
 todonow() { vim /media/chandrama/Rohit/ToDos/money;}
 ideah() { vim /media/chandrama/Rohit/ToDos/idea;}
