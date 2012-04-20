@@ -9,8 +9,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # history length
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -86,6 +86,8 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+eval `dircolors ~/Lab/dotfiles/dir-colors`
 
 z(){ ssh -C2qTnN -D 8080 l33t@10.3.11.250 -v -p 1123;};
 x(){ ssh -C l33t@10.3.11.250 -v -p 1123;}

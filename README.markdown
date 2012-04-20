@@ -4,7 +4,10 @@ Installation
 
 Create symlinks:
 
-    ln -s ~/Lab/dotfiles/bashrc ~/.bashrc
-    ln -s ~/Lab/dotfiles/vimrc ~/.vimrc
-    ln -s ~/Lab/dotfiles/vim ~/.vim
-    ln -s ~/Lab/dotfiles/irssi ~/.irssi
+    ln -sf ~/Lab/dotfiles/bashrc ~/.bashrc
+    ln -sf ~/Lab/dotfiles/vimrc ~/.vimrc
+    ln -sf ~/Lab/dotfiles/vim ~/.vim
+    ln -sf ~/Lab/dotfiles/irssi ~/.irssi
+    ln -sf ~/Lab/dotfiles/muttrc ~/.muttrc
+    ln -sf ~/Lab/dotfiles/muttrc-colors ~/.muttrc-colors
+    ln -sf ~/Lab/dotfiles/gitconfig ~/.gitconfig

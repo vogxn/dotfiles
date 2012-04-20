@@ -30,7 +30,6 @@ if has("autocmd")
     filetype off
     filetype plugin indent on
 endif
-syntax on
 behave xterm
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,15 +91,19 @@ map ,s :call StripWhitespace ()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colours
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax enable
+syntax on
 set t_Co=256                 " 256 color terminal if possible
+let g:solarized_termcolors=16
 set background=dark
-colorscheme zenburn          " Color scheme
+colorscheme solarized
+"colorscheme zenburn          " Color scheme
 "colorscheme evening         " Color scheme
-hi! link Folded Delimiter    " Override folding colors - they suck
+"hi! link Folded Delimiter    " Override folding colors - they suck
 
 " Highlight 80th (or textwidth) column (vim 7.3+)
 if exists("+colorcolumn")
   set colorcolumn=+1,+2,+3
-  highlight ColorColumn ctermbg=238 guibg=#4f4f4f
+  highlight ColorColumn ctermbg=0B6 guibg=#4f4f4f
 endif
 
