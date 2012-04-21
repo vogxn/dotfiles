@@ -1,6 +1,7 @@
 Installation
 
     git clone git://github.com/rohityadav/dotfiles.git
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 
 Create symlinks: (export SRC_ROOT=~/Lab/dotfiles)
 
