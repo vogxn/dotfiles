@@ -35,7 +35,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[03;35m\]\u@\h\[\033[00m\]:\[\033[02;36m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -87,24 +87,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-eval `dircolors ~/Lab/dotfiles/dir-colors`
-
-z(){ ssh -C2qTnN -D 8080 l33t@10.3.11.250 -v -p 1123;};
-x(){ ssh -C l33t@10.3.11.250 -v -p 1123;}
-y(){ ssh antrix@71.19.150.199 -Cv -p 1123; }
-backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-backup.sh;}
-todonow() { vim /media/chandrama/Rohit/ToDos/money;}
-ideah() { vim /media/chandrama/Rohit/ToDos/idea;}
-
-userl=`ps aux | grep ssh | grep priv | wc -l`
-if [ $userl -gt 0 ]
-then
-`echo "ALERT someone has remotely logged in" | festival --tts` &
-fi
-
-export ANDROID_NDK=/home/rohit/android-ndk/
-export ANDROID_SDK=/home/rohit/android-sdk/
-export PATH=/var/lib/gems/1.8/bin/:$PATH
-export PATH="/usr/local/lib/node:$PATH"
-export PATH="/home/rohit/bin:/home/rohit/Lab/videolan/vlc/include:/home/rohit/Lab/videolan/vlc/build/lib/.libs:/home/rohit/Lab/videolan/vlc/build/src/.libs/:$PATH"
-export VLC_PLUGIN_PATH=/home/rohit/Lab/videolan/vlc/build/
+source ~/.aliasrc
