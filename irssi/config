@@ -22,6 +22,7 @@ chatnets = {
 
 channels = (
   { name = "#vlmc"; chatnet = "FreeNode"; autojoin = "Yes"; },
+  { name = "#baagi"; chatnet = "FreeNode"; autojoin = "Yes"; },
   { name = "#videolan"; chatnet = "FreeNode"; autojoin = "Yes"; }
 );
 
@@ -189,9 +190,9 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Rohit Yadav";
-    user_name = "rohityadav";
-    nick = "rohityadav";
+    real_name = "Bhai Sahab";
+    user_name = "bhaisahab";
+    nick = "bhaisahab";
     log_create_mode = "644";
     timestamp_format = "%H:%M:%S";
   };
