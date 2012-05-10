@@ -1,7 +1,7 @@
-set imap_user = "bhaisahab@baagi.org"
 #set imap_pass = ""
-set smtp_url = "smtp://bhaisahab@baagi.org:25"
 #set smtp_pass = ""
+set imap_user = "bhaisaab@baagi.org"
+set smtp_url = "smtp://bhaisaab@baagi.org:25"
 
 set spoolfile = "imaps://baagi.org:993"
 set imap_idle = yes
@@ -9,8 +9,8 @@ set imap_idle = yes
 mailboxes = +INBOX
 
 set hostname = "baagi.org"
-set realname = 'bhaisahab'
-set from = "bhaisahab@baagi.org"
+set realname = 'bhaisaab'
+set from = "bhaisaab@baagi.org"
 set use_from = yes
 
 set copy = yes
