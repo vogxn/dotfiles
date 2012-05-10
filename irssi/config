@@ -23,7 +23,8 @@ chatnets = {
 channels = (
   { name = "#vlmc"; chatnet = "FreeNode"; autojoin = "Yes"; },
   { name = "#baagi"; chatnet = "FreeNode"; autojoin = "Yes"; },
-  { name = "#videolan"; chatnet = "FreeNode"; autojoin = "Yes"; }
+  { name = "#videolan"; chatnet = "FreeNode"; autojoin = "Yes"; },
+  { name = "#hackers-india"; chatnet = "OFTC"; autojoin = "Yes"; }
 );
 
 aliases = {
