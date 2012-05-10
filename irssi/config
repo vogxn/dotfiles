@@ -190,9 +190,9 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Bhai Sahab";
-    user_name = "bhaisahab";
-    nick = "bhaisahab";
+    real_name = "bhaisaab";
+    user_name = "bhaisaab";
+    nick = "bhaisaab";
     log_create_mode = "644";
     timestamp_format = "%H:%M:%S";
   };
