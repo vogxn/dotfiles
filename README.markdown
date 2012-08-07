@@ -3,7 +3,7 @@ Installation
     git clone git://github.com/bhaisaab/dotfiles.git
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 
-Create symlinks: (export SRC_ROOT=~/Lab/dotfiles)
+Create symlinks: (export SRC_ROOT=`pwd`)
 
     ln -sf $SRC_ROOT/aliasrc ~/.aliasrc
     ln -sf $SRC_ROOT/dir-colors ~/.dircolors

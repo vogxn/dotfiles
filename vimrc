@@ -2,6 +2,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
 set noswapfile
 
@@ -9,8 +10,7 @@ set noswapfile
 "  Text Formatting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent
-set smartindent
-set nowrap
+"set smartindent
 
 set softtabstop=2
 set shiftwidth=2
@@ -94,8 +94,10 @@ map ,s :call StripWhitespace ()<CR>
 syntax enable
 syntax on
 set t_Co=256                 " 256 color terminal if possible
-let g:solarized_termcolors=16
 set background=dark
+let g:solarized_termcolors=16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
 "colorscheme zenburn          " Color scheme
 "colorscheme evening         " Color scheme
@@ -107,3 +109,8 @@ if exists("+colorcolumn")
   highlight ColorColumn ctermbg=0B6 guibg=#4f4f4f
 endif
 
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
