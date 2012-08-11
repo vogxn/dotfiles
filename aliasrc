@@ -1,5 +1,6 @@
 z(){ ssh -C2qTnN -D 8080 bhaisaab@baagi.org -v -p 1123;};
 y(){ ssh bhaisaab@71.19.150.199 -Cv -p 1123; }
+f(){ finger bhaisaab@baagi.org }
 
 backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-backup.sh;}
 todonow() { vim /media/chandrama/Rohit/ToDos/money;}
@@ -23,6 +24,6 @@ if [[ `uname` == 'Linux' ]]; then
 fi
 
 if [[ `uname` == 'Darwin' ]]; then
-  export PATH=/Users/citrix/bin:/Users/citrix/Work/ant/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:$PATH
+  export PATH=/Bhaisaab/bin:/Bhaisaab/Work/ant/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:$PATH
   export CATALINA_HOME=/usr/local/apache-tomcat-6.0.33
 fi
