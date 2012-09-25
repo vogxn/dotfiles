@@ -6,12 +6,14 @@ backupnow() { echo "Launching secret backup program"; sh /media/chandrama/take-b
 todonow() { vim /media/chandrama/Rohit/ToDos/money;}
 ideah() { vim /media/chandrama/Rohit/ToDos/idea;}
 
+scpatch() { scp -Cv -P 1123 $1 bhaisaab@baagi.org:bhaisaab.org/patches/$2 };
+
 if [[ `uname` == 'Linux' ]]; then
 
   userl=`ps aux | grep ssh | grep priv | wc -l`
   if [ $userl -gt 0 ]
   then
-  `echo "ALERT someone has remotely logged in" | festival --tts` &
+    `echo "ALERT someone has remotely logged in" | festival --tts` &
   fi
 
   export ANDROID_NDK=/home/rohit/android-ndk/
@@ -25,5 +27,8 @@ fi
 
 if [[ `uname` == 'Darwin' ]]; then
   export PATH=/Bhaisaab/bin:/Bhaisaab/Work/ant/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:$PATH
+  export MAVEN_OPTS=-Xmx1024m
   export CATALINA_HOME=/usr/local/apache-tomcat-6.0.33
+  export M2_HOME=/usr/local/apache-maven-3.0.4
+  export PATH=$PATH:$M2_HOME/bin
 fi
