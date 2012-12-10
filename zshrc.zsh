@@ -153,12 +153,11 @@ source $ZSH/oh-my-zsh.sh
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias idea='/opt/intellij-idea-ce/bin/idea.sh'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -l'
 alias ls='ls --color=auto'
-alias m='sudo -u prasanna -i mutt'
+alias m='mutt'
 alias xterm='xterm -rv -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24'
 
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
