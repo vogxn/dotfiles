@@ -1,10 +1,6 @@
 [user]
-  name = Rohit Yadav
-  email = bhaisaab@apache.org
-  signingkey =
-
-[credential]
-  helper = osxkeychain
+  name = Prasanna Santhanam
+  email = tsp@apache.org
 
 [core]
 #  gitproxy = gitproxy
@@ -51,10 +47,4 @@
   history-view-vpane-position = 435
   main-window-view = HistoryView
   file-view-vpane-position = 674
-
-[sendemail]
-# smtpserver = /usr/bin/msmtp #smtp.gmail.com
-# smtpserverport = 587
-# smtpencryption = tls
-# smtpuser = rohityadav89@gmail.com
 

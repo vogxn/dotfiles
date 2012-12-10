@@ -23,7 +23,7 @@ set softtabstop=4
 set expandtab
 
 " Status line at the bottom of the buffer
-set statusline=[%n]\ %<%f%m%r\ %w\ %y\ \ <%{&fileformat}>%=\ %l,%c%V\/%L\ \ %P\ %{fugitive#statusline()}
+set statusline=[%n]\ %<%f%m%r\ %w\ %y\ \ <%{&fileformat}>%=\ %l,%c%V\/%L\ \ %P\ 
 
 " Powerline options
 set nocompatible
