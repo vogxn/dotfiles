@@ -1,8 +1,36 @@
 servers = (
+  { address = "irc.ubuntu.com"; chatnet = "Ubuntu"; port = "8001"; },
+  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
+  { 
+    address = "irc.open-ircnet.net";
+    chatnet = "IRCnet";
+    port = "6667";
+  },
+  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
+  { 
+    address = "irc.undernet.org";
+    chatnet = "Undernet";
+    port = "6667";
+  },
+  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
+  { 
+    address = "irc.quakenet.org";
+    chatnet = "QuakeNet";
+    port = "6667";
+  },
   { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
   {
-    address = "irc.freenode.net";
-    chatnet = "FreeNode";
+    address = "irc.gamesurge.net";
+    chatnet = "GameSurge";
+    port = "6667";
+  },
+  { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
+  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
+  { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
+  {
+    address = "localhost";
+    chatnet = "Freenode";
     port = "6667";
     use_ssl = "no";
     ssl_verify = "no";
@@ -11,20 +39,84 @@ servers = (
 );
 
 chatnets = {
+  IRCnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+  };
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "1";
+  };
+  Undernet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  DALnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  QuakeNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
   OFTC = { 
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
     max_whois = "30";
   };
-  FreeNode = { type = "IRC"; };
+  GameSurge = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  WebChat = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  Rizon = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  LinkNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  SILC = { type = "SILC"; };
+  Ubuntu = { type = "IRC"; };
+  Freenode = {
+    type = "IRC";
+    nick = "vogxn";
+    autosendcmd = "/msg nickserv identify password; wait 2000";
+  };
 };
 
 channels = (
-  { name = "#vlmc"; chatnet = "FreeNode"; autojoin = "Yes"; },
-  { name = "#baagi"; chatnet = "FreeNode"; autojoin = "Yes"; },
-  { name = "#videolan"; chatnet = "FreeNode"; autojoin = "Yes"; },
-  { name = "#hackers-india"; chatnet = "OFTC"; autojoin = "Yes"; }
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
+  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
+  { name = "#cloudstack"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#cloudstack-dev"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#cloudstack-meeting"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#asfinfra"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#puppet"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -66,7 +158,7 @@ aliases = {
   GOTO = "sb goto";
   CHAT = "dcc chat";
   RUN = "SCRIPT LOAD";
-  CALC = "exec - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
   SBAR = "STATUSBAR";
   INVITELIST = "mode $C +I";
   Q = "QUERY";
@@ -139,7 +231,6 @@ statusbar = {
         act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
-        usercount = { };
       };
     };
 
@@ -191,19 +282,16 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "bhaisaab";
-    user_name = "bhaisaab";
-    nick = "bhaisaab";
-    log_create_mode = "644";
-    timestamp_format = "%H:%M:%S";
+    real_name = "Prasanna Santhanam";
+    user_name = "vogxn";
+    nick = "vogxn";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = {
-    autolog = "yes";
-    autolog_path = "~/irclogs/$0/$0.%Y-%m-%d.log";
-    autolog_level = "ALL -CRAP -CLIENTCRAP -CTCPS";
-    theme = "xchat";
-  };
-  "perl/core/scripts" = { nicklist_automode = "SCREEN"; };
 };
-logs = { };
+ignores = (
+  { level = "JOINS QUITS"; channels = ( "#cloudstack" ); },
+  { level = "JOINS QUITS"; channels = ( "#cloudstack-dev" ); },
+  { level = "JOINS QUITS"; channels = ( "#cloudstack-meeting" ); }
+  { level = "JOINS QUITS"; channels = ( "#asfinfra" ); }
+  { level = "JOINS QUITS"; channels = ( "#puppet" ); }
+);
