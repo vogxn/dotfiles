@@ -1,119 +1,64 @@
-" Load plugins with pathogen
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+syntax on
+filetype on 
 filetype plugin indent on
 
-set noswapfile
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  Text Formatting
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoindent
-"set smartindent
 
-set hlsearch
-set paste
-set softtabstop=2
-set shiftwidth=2
+set showcmd         " Show (partial) command in status line.
+set showmatch       " Show matching brackets.
+set ignorecase      " Do case insensitive matching
+set smartcase       " Do smart case matching
+set incsearch       " Incremental search
+set hlsearch        " Highlighted search
+set autowrite       " Automatically save before commands like :next and :make
+set hidden          " Hide buffers when they are abandoned
+set nu              " Show line numbers by default
+inoremap ^? ^H
+
 set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
-set nosmarttab
-set formatoptions+=n       " support for numbered/bullet lists
-set textwidth=80           " wrap at 80 chars by default
-set cursorline
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basic settings, normally set by default
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line at the bottom of the buffer
+set statusline=[%n]\ %<%f%m%r\ %w\ %y\ \ <%{&fileformat}>%=\ %l,%c%V\/%L\ \ %P\ %{fugitive#statusline()}
+
+" Powerline options
 set nocompatible
-if has("autocmd")
-" Turn off, then on to make sure we load ftdetect plugins in
-" pathogen-added paths
-    filetype off
-    filetype plugin indent on
-endif
-behave xterm
+set laststatus=2
+set encoding=utf-8
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" UI
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fold method
+set foldmethod=indent
+set foldlevel=99
 
-set ruler                    " show the cursor position all the time
-set noshowcmd                " don't display incomplete commands
-set nolazyredraw             " turn off lazy redraw
-set number                   " line numbers
-set wildmenu                 " turn on wild menu
-set wildmode=list:longest,full
-set ch=2                     " command line height
-set backspace=2              " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,]   " backspace and cursor keys wrap to
-set shortmess=filtIoOA       " shorten messages
-set report=0                 " tell us about changes
-set nostartofline            " don't jump to the start of line when scrolling
-set virtualedit=block        " allow virtual edit in visual block
-set so=2                     " Always show lines above/below cursor
-set encoding=utf-8           " Use utf-8 by default
+" Split Window Movement 
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
-set title                    " Xterm title bar
-set laststatus=2             " Always show status bar
-set statusline=%F%m%r%h%w\ %=[ff=%{&ff}]\ [ft=%Y]\ [asc=\%3.3b/0x\%02.2B]\ [%4l,%4v][%3p%%][len=%L][buf=%n]
 
-set showmatch                " Show matching parentheses
-set shiftround               " Indent to tab boundaries
-set matchtime=5              " 5/10 seconds to show paren matches
-set list listchars=tab:>-,trail:- " Show trailing spaces and hard tabs
+" Task lists
+map <leader>td <Plug>TaskList
 
-set incsearch                " Incremental search
-set ignorecase               " Ignore case in searches
-set smartcase                " ... unless the search term has caps
-set iskeyword+=_,$,@,%,#     " Chars not to be word separators
-set showcmd                  " Show commands being typed
-set viminfo+=%               " Save/restore buffer list
+" Gundo - diff
+map <leader>g :GundoToggle<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom commands
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" lead with ,
-let mapleader = ","
+" Don't use pyflakes quickfix
+let g:pyflakes_use_quickfix = 0
+let g:pep8_map='<leader>8'
 
-" exit to normal mode with 'jj'
-inoremap jj <ESC>
+" Tab completion for python
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
-" quit forcefully
-cmap qq q!
+" GoTo and Refactoring
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
 
-" Sudo make me a sandwich
-cmap w!! %!sudo tee > /dev/null %
-
-function! StripWhitespace ()
-   exec ':%s/ \+$//gc'
-endfunction
-map ,s :call StripWhitespace ()<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colours
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable
-syntax on
-set t_Co=256                 " 256 color terminal if possible
-set background=dark
-let g:solarized_termcolors=16
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
-"colorscheme zenburn          " Color scheme
-"colorscheme evening         " Color scheme
-"hi! link Folded Delimiter    " Override folding colors - they suck
-
-" Highlight 80th (or textwidth) column (vim 7.3+)
-if exists("+colorcolumn")
-  set colorcolumn=+1,+2,+3
-  highlight ColorColumn ctermbg=0B6 guibg=#4f4f4f
-endif
-
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
+" NERD Tree
+map <leader>n :NERDTreeToggle<CR>

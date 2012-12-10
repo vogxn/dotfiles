@@ -1,39 +1,176 @@
-#set imap_pass = ""
-#set smtp_pass = ""
-set imap_user = "bhaisaab@baagi.org"
-set smtp_url = "smtp://bhaisaab@baagi.org:25"
+#Muttrc 
+#Author: T S Prasanna
+#Last modified: Wednesday, October 31 2007
 
-set spoolfile = "imaps://baagi.org:993"
-set imap_idle = yes
+# The mail server location. MSMTP is a lightweight sendmail
+set sendmail="/usr/bin/msmtp"
 
-mailboxes = +INBOX
+#PGP Encryption
+#set pgp_default_version=gpg
+set pgp_use_gpg_agent=yes
 
-set hostname = "baagi.org"
-set realname = 'bhaisaab'
-set from = "bhaisaab@baagi.org"
-set use_from = yes
+# this way you get a "clean" view on the important headers of mail
+ignore *
+unignore from date subject to cc bcc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+hdr_order From: Date: To: Cc: Subject
 
-set copy = yes
-set mbox_type = Maildir
-set folder = $HOME/mail
-set record = +sent
-set mbox = +mbox
-set postponed = +postponed
+# which editor do you want to use? In my case it is vim. I like to
+# ensure that the textwidth is maximum 70 characters.
+set editor="vim +':set textwidth=70' +':set wrap' +':set linebreak'"
 
-set mail_check = 30
-set timeout = 300
-set imap_keepalive = 500
-set imap_check_subscribed
-set sort=threads
+#define how often mutt should check for mail
+set mail_check		= 2
 
-set ssl_starttls=yes
-set ssl_force_tls=yes
+#signature file
+set signature=~/.signature
+#alias file sourced
+source ~/.mutt_aliases
+set alias_file=~/.mutt_aliases
 
-set header_cache="~/.mutt/cache/headers"
-set message_cachedir="~/.mutt/cache/bodies"
-set certificate_file=~/.mutt/certificates
+set sort=threads                        #sort by message threads in index
 
-alternative_order text/plain text/html *
-auto_view text/html
+# using the 'pager' option you can tell mutt to split the screen
+# the index (top) has 6 lines. Also specify what should be shown
+# in this pager
+set pager_index_lines   = 8
+set pager_format        = "%S [%C/%T] %n (%l) %s"
 
-source ~$MAILCONF/.muttrc-colors
+set mime_forward=yes
+set mime_forward_rest=yes
+        
+#mailboxes
+set folder=$HOME/mail
+# other mailboxes in ~/mail
+mailboxes ! +mbox +search +cloudstack-devel +libcloud +python +bugs +cloudstack-bugs +git +jenkins +cloudstack-git +hudson +ovs +duplicates +spam +support +gmail
+
+#mailing lists
+lists discuss@openvswitch.org
+subscribe discuss@openvswitch.org
+
+lists cloudstack-dev@incubator.apache.org
+subscribe cloudstack-dev@incubator.apache.org
+
+lists cloudstack-users@incubator.apache.org
+subscribe cloudstack-users@incubator.apache.org
+
+lists testing-in-python@lists.idyll.org
+subscribe testing-in-python@lists.idyll.org
+
+lists the_wing_iiith@googlegroups
+subscribe the_wing_iiith@googlegroups
+
+lists support@cloud.com
+subscribe support@cloud.com
+
+lists qa@cloud.com
+subscribe qa@cloud.com
+
+lists idc-engg@cloud.com
+subscribe idc-engg@cloud.com
+
+lists engineering@cloud.com
+subscribe engineering@cloud.com
+
+lists supportteam@cloud.com
+subscribe supportteam@cloud.com
+
+lists dev-support@cloud.com
+subscribe dev-support@cloud.com
+
+
+#hooks (fcc-hooks, send-hooks)
+#send-hook for cloud
+#send-hook '~t @cloud\.com$' 'my_hdr From: Prasanna Santhanam <prasanna@cloud.com>; my_hdr Reply-To: Prasanna Santhanam <prasanna.santhanam@citrix.com>'
+
+#send-hook for citrix 
+send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <prasanna.santhanam@citrix.com>'
+
+#send-hook for gmail
+send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
+send-hook '~t @incubator\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
+send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
+send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
+send-hook '~t @yahoo\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
+
+
+#fcc-hook for cloud
+
+#run fetchmail by hitting key G and kill it by hitting K
+macro index G "!fetchmail -m 'procmail -d %T'\r"
+macro pager G "!fetchmail -m 'procmail -d %T'\r"  
+macro index K "!fetchmail -q\r"  
+macro pager K "!fetchmail -q\r"  
+
+#run help file on elinks
+macro generic <f1> "!elinks /usr/doc/mutt/html/manual.html\n" "Show Mutt documentation"
+macro index   <f1> "!elinks /usr/doc/mutt/html/manual.html\n" "Show Mutt documentation"
+macro pager   <f1> "!elinks /usr/doc/mutt/html/manual.html\n" "Show Mutt documentation"
+
+#mairix macro
+macro generic ,f "<shell-escape>mairix " "search via mairix"
+
+# specify where the read messages, sent messages  and the postponed
+# messages are kept.
+set postponed           = ~/mail/postponed
+set mbox                = ~/mail/mbox
+set record              = ~/mail/sent-mail
+
+#spell check with aspell
+set ispell="aspell -e -c"
+
+#miscellany
+set abort_nosubject=yes			#Abort, if message has no subject
+#set dsn_notify="failure,delay"	# delivery status notification 
+								# (never, failure, delay, success)
+#set dsn_return="hdrs"			# what to return with DSN (hdrs or full)
+
+#set date_format="!%a %b %d, %Y at %I:%M:%S%p %Z"
+
+# the status-line, at the bottom, can be configured too.
+set status_format       = "Mutt @ %h: %f (%l) [%M/%m] [U=%u(%n,%o),post=%p,new=%b]"
+
+set realname		="Prasanna Santhanam"
+set from		="Prasanna Santhanam <Prasanna.Santhanam@citrix.com>"
+set use_from		= yes
+set envelope_from	= yes
+set spoolfile		=$HOME/mail/mbox
+
+set forward_format      ="Fwd: %s"
+set indent_str          ="> "
+
+# color patterns for mutt
+color normal     white		default # normal text
+color indicator  green         default # actual message
+color tree       green  		default # thread arrows
+color status     black         white # status line
+color error      brightred      default # errors
+color message    magenta        default # info messages
+color signature  magenta        default # signature
+color attachment brightyellow   red     # MIME attachments
+color search     brightyellow   red     # search matches
+color tilde      brightmagenta  default # ~ at bottom of msg
+color markers    red            default # + at beginning of wrapped lines
+color hdrdefault cyan           default # default header lines
+color bold       red            default # hiliting bold patterns in body
+color underline  green          default # hiliting underlined patterns in body
+color quoted     cyan           default # quoted text
+color quoted1    magenta        default
+color quoted2    red            default
+color quoted3    green          default
+color quoted4    magenta           default
+color quoted5    cyan           default
+color quoted6    magenta        default
+color quoted7    red            default
+color quoted8    green          default
+color quoted9    cyan           default
+color body   cyan  default  "((ftp|http|https)://|news:)[^ >)\"\t]+"
+color body   cyan  default  "[-a-z_0-9.+]+@[-a-z_0-9.]+"
+color body   red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
+color body   green default  "(^| )_[-a-z0-9_]+_[,.?]?[\n]"
+color body   red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
+color body   green default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
+color index  cyan  default  ~F         # Flagged
+color index  red   default  ~N         # New
+color index  magenta    default  ~T         # Tagged
+color index  cyan       default  ~D         # Deleted

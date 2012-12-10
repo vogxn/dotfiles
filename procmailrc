@@ -1,0 +1,130 @@
+VERBOSE=off
+DEFAULT=/var/spool/mail/prasanna
+MAILDIR=$HOME/mail
+LOGFILE=$HOME/.procmaillog
+FORMAIL=/usr/bin/formail
+NL="
+"
+##recipe lines begin with :0
+##dont put comments on recipe lines
+##disable a recipe with the false condition !
+##condition lines begin with * and regex is your friend
+##conditions are anded and everything after * is fed straight into egrep
+##one action line follows the conditions, in this case it is a mailbox name
+
+#catch duplicates using formail
+:0 Whc: .msgid.lock
+| $FORMAIL -D 16384 .msgid.cache
+
+:0 a
+$MAILDIR/duplicates
+
+#now flush some spam out 
+:0  
+* ^Subject:.*(credit|cash|money|debt|sex|sale|loan|spam|JUNIT Test)
+$MAILDIR/spam
+
+#no more html messages
+:0
+* ^Content-Type:.*html
+$MAILDIR/junk
+
+# cases
+:0
+* ^To:.*(.*cases\@cloud.com)
+$MAILDIR/junk
+
+:0
+* ^Cc:.*(.*cases\@cloud.com)
+$MAILDIR/junk
+
+# supportteam
+:0
+* ^To:.*(.*supportteam\@cloud.com|.*supportteam\@citrix.com)
+$MAILDIR/support
+
+:0
+* ^Cc:.*(.*supportteam\@cloud.com|.*supportteam\@citrix.com)
+$MAILDIR/support
+
+# support
+:0
+* ^To:.*(.*support\@cloud.com|.*supportteam\@citrix.com)
+$MAILDIR/support
+
+:0
+* ^Cc:.*(.*support\@cloud.com|.*support\@citrix.com)
+$MAILDIR/support
+
+#git
+:0
+* ^From: .*(git-ccp\@citrix.com)
+$MAILDIR/git
+
+#hudson emails
+:0
+* ^From:.*(hudson\@citrix.com)
+$MAILDIR/hudson
+
+:0
+* ^From:.*(jenkins\@cloudstack.org)
+$MAILDIR/jenkins
+
+#testing in python
+:0
+* ^(To|Cc): .*(testing-in-python\@lists.idyll.org)
+$MAILDIR/python
+
+#bugzilla
+:0
+* ^From: .*(bugs\@cloudstack.org)
+$MAILDIR/bugs
+
+:0
+* ^(To|Cc): .*(dev\@libcloud.apache.org)|\
+  ^(To|Cc): .*(users\@libcloud.apache.org)|\
+$MAILDIR/libcloud
+
+:0
+* ^To: .*(cloudstack-commits\@incubator.apache.org)
+$MAILDIR/cloudstack-git
+
+:0
+* ^From: .*(jira\@apache.org)
+$MAILDIR/cloudstack-bugs
+
+
+# oss lists
+:0
+* ^(To|Cc): .*(cloudstack-dev\@incubator.apache.org)|\
+  ^(To|Cc): .*(cloudstack-users\@incubator.apache.org)|\
+  ^(To|Cc): .*\@lists.sourceforge.net
+$MAILDIR/cloudstack-devel
+
+#clogeny
+:0
+* ^From: (.*\@clogeny.com)
+$MAILDIR/mbox
+
+# Sent Mail
+:0
+* ^From: .*(tsp\@apache.org|prasanna.santhanam\@citrix.com|Prasanna.Santhanam\@citrix.com)
+$MAILDIR/sent-mail
+
+
+
+:0
+* ^(To|Cc): (.*\@cloud.com|.*\@.*citrix.com|.*\@citrite.net)
+$MAILDIR/mbox
+
+
+
+################################
+# Last rule: mail that gets    #
+# this far goes in default box #  
+################################
+:0 
+* .*
+$MAILDIR/gmail
+# End of file
+
