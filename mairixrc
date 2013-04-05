@@ -1,7 +1,7 @@
 #mairix configuration
-base=/home/prasanna/mail
+base=/Users/tsp/mail
 mbox=bugs:mbox:support:git:sent-mail:/opt/mail/arch/*
 omit=spam:junk:duplicates:search
-database=/home/prasanna/mail/mairixdb
+database=/Users/tsp/mail/mairixdb
 mfolder=search
 mformat=mbox

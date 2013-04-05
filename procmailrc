@@ -61,14 +61,13 @@ $MAILDIR/support
 * ^From: .*(git-ccp\@citrix.com)
 $MAILDIR/git
 
-#hudson emails
 :0
-* ^From:.*(hudson\@citrix.com)
-$MAILDIR/hudson
+* ^From:.*(jenkins-ccp\@citrix.com)
+$MAILDIR/junk
 
 :0
 * ^From:.*(jenkins\@cloudstack.org)
-$MAILDIR/jenkins
+$MAILDIR/cloudstack-jenkins
 
 #testing in python
 :0
@@ -81,12 +80,15 @@ $MAILDIR/python
 $MAILDIR/bugs
 
 :0
-* ^(To|Cc): .*(dev\@libcloud.apache.org)|\
-  ^(To|Cc): .*(users\@libcloud.apache.org)|\
+* ^(To|Cc): .*(dev\@libcloud.apache.org)
 $MAILDIR/libcloud
 
 :0
-* ^To: .*(cloudstack-commits\@incubator.apache.org)
+* ^From:.*(jenkins\@builds.apache.org)
+$MAILDIR/cloudstack-devel
+
+:0
+* ^To: .*(commits\@cloudstack.apache.org)
 $MAILDIR/cloudstack-git
 
 :0
@@ -97,9 +99,21 @@ $MAILDIR/cloudstack-bugs
 # oss lists
 :0
 * ^(To|Cc): .*(cloudstack-dev\@incubator.apache.org)|\
+  ^(To|Cc): .*(dev\@cloudstack.apache.org)|\
   ^(To|Cc): .*(cloudstack-users\@incubator.apache.org)|\
+  ^(To|Cc): .*(users\@cloudstack.apache.org)|\
   ^(To|Cc): .*\@lists.sourceforge.net
 $MAILDIR/cloudstack-devel
+
+:0
+* ^(To|Cc): .*(jenkinsci-users\@googlegroups.com)|\
+  ^(To|Cc): .*(jenkinsci-dev@googlegroups.com)
+$MAILDIR/jenkins-dev
+
+:0
+* ^(To|Cc): .*(builds\@apache.org)
+$MAILDIR/infra
+
 
 #clogeny
 :0

@@ -3,7 +3,7 @@
 #Last modified: Wednesday, October 31 2007
 
 # The mail server location. MSMTP is a lightweight sendmail
-set sendmail="/usr/bin/msmtp"
+set sendmail="/usr/local/bin/msmtp"
 
 #PGP Encryption
 #set pgp_default_version=gpg
@@ -42,17 +42,20 @@ set mime_forward_rest=yes
 #mailboxes
 set folder=$HOME/mail
 # other mailboxes in ~/mail
-mailboxes ! +mbox +search +cloudstack-devel +libcloud +python +bugs +cloudstack-bugs +git +jenkins +cloudstack-git +hudson +ovs +duplicates +spam +support +gmail
+mailboxes ! +mbox +search +cloudstack-devel +python +infra +jenkins-dev +cloudstack-jenkins +libcloud +gmail +cloudstack-bugs +git +cloudstack-git +bugs +duplicates +spam +support 
 
 #mailing lists
-lists discuss@openvswitch.org
-subscribe discuss@openvswitch.org
-
 lists cloudstack-dev@incubator.apache.org
 subscribe cloudstack-dev@incubator.apache.org
 
+lists dev@cloudstack.apache.org
+subscribe dev@cloudstack.apache.org
+
 lists cloudstack-users@incubator.apache.org
 subscribe cloudstack-users@incubator.apache.org
+
+lists users@cloudstack.apache.org
+subscribe users@cloudstack.apache.org
 
 lists testing-in-python@lists.idyll.org
 subscribe testing-in-python@lists.idyll.org
@@ -89,6 +92,7 @@ send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <prasanna.santhana
 #send-hook for gmail
 send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @incubator\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
+send-hook '~t @cloudstack\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
 send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
 send-hook '~t @yahoo\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'

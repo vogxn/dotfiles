@@ -156,4 +156,4 @@ alias grep='grep --color=auto'
 alias m='mutt'
 alias xterm='xterm -rv -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24'
 
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export PATH=~/bin:$PATH

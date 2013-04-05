@@ -8,14 +8,15 @@ ARCHDIR=/opt/mail/arch
 archivemail --delete --days=3 $HOME/mail/spam
 archivemail --delete --days=3 $HOME/mail/junk
 archivemail --delete --days=3 $HOME/mail/git  #available in git history
-archivemail --delete --days=3 $HOME/mail/cloudstack-git  #not required - check archives on lp
-archivemail --delete --days=3 $HOME/mail/openstack-devel  #not required - check archives on lp
-archivemail --delete --days=3 $HOME/mail/general-apache  #not required - check archives on lp
-archivemail --delete --days=3 $HOME/mail/hudson  #not required - check archives on lp
+archivemail --delete --days=3 $HOME/mail/cloudstack-git  #not required - check archives 
+archivemail --delete --days=3 $HOME/mail/cloudstack-bugs  #not required - check archives
+archivemail --delete --days=1 $HOME/mail/hudson  
+archivemail --delete --days=1 $HOME/mail/infra
+archivemail --delete --days=1 $HOME/mail/cloudstack-jenkins  
+archivemail --delete --days=1 $HOME/mail/jenkins-dev
 archivemail --delete --days=3 $HOME/mail/python  #not required - check archives on lp
-archivemail --delete --days=3 $HOME/mail/ovs  #not required - check archives on lp
+archivemail --delete --days=3 $HOME/mail/bugs
+archivemail --delete --days=3 $HOME/mail/support
 
-archivemail --suffix $SUFFIX -u -d 30 -o $ARCHDIR $HOME/mail/support #keeps two months of email in mailboxes
-archivemail --suffix $SUFFIX -u -d 30 -o $ARCHDIR $HOME/mail/bugs #keeps two months of email in mailboxes
 archivemail --suffix $SUFFIX -u -d 30 -o $ARCHDIR $HOME/mail/mbox #keeps two months of email in mailboxes
 archivemail --suffix $SUFFIX -u -d 30 -o $ARCHDIR $HOME/mail/cloudstack-devel #keeps two months of email in mailboxes

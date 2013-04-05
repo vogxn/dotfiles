@@ -1,6 +1,6 @@
 [user]
-  name = Prasanna Santhanam
-  email = tsp@apache.org
+	name = Prasanna Santhanam
+	email = tsp@apache.org
 
 [core]
 #  gitproxy = gitproxy
@@ -47,4 +47,5 @@
   history-view-vpane-position = 435
   main-window-view = HistoryView
   file-view-vpane-position = 674
-
+[rerere]
+	enabled = true
