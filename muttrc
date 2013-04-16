@@ -42,7 +42,7 @@ set mime_forward_rest=yes
 #mailboxes
 set folder=$HOME/mail
 # other mailboxes in ~/mail
-mailboxes ! +mbox +search +cloudstack-devel +python +infra +jenkins-dev +cloudstack-jenkins +libcloud +gmail +cloudstack-bugs +git +cloudstack-git +bugs +duplicates +spam +support 
+mailboxes ! +mbox +search +cloudstack-devel +python +xen +infra +jenkins-dev +cloudstack-jenkins +libcloud +gmail +cloudstack-bugs +git +cloudstack-git +bugs +duplicates +spam +support 
 
 #mailing lists
 lists cloudstack-dev@incubator.apache.org

@@ -1,6 +1,6 @@
 #mairix configuration
 base=/Users/tsp/mail
-mbox=bugs:mbox:support:git:sent-mail:/opt/mail/arch/*
+mbox=bugs:mbox:cloudstack-devel:support:python:sent-mail:xen:/opt/mail/arch/*
 omit=spam:junk:duplicates:search
 database=/Users/tsp/mail/mairixdb
 mfolder=search

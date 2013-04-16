@@ -106,6 +106,12 @@ $MAILDIR/cloudstack-bugs
 $MAILDIR/cloudstack-devel
 
 :0
+* ^(To|Cc): .*(xen-users\@lists.xen.org)|\
+  ^(To|Cc): .*(xen-devel\@lists.xen.org)|\
+$MAILDIR/xen
+
+
+:0
 * ^(To|Cc): .*(jenkinsci-users\@googlegroups.com)|\
   ^(To|Cc): .*(jenkinsci-dev@googlegroups.com)
 $MAILDIR/jenkins-dev
