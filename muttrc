@@ -4,6 +4,7 @@
 
 # The mail server location. MSMTP is a lightweight sendmail
 set sendmail="/usr/local/bin/msmtp"
+unset record
 
 #PGP Encryption
 #set pgp_default_version=gpg
@@ -91,7 +92,6 @@ send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <prasanna.santhana
 
 #send-hook for gmail
 send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
-send-hook '~t @incubator\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @cloudstack\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
 send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'

@@ -1,5 +1,7 @@
 buildcs() { mvn -pl `git status --porcelain |sed '/^H/d'| awk '{print $2}' |sed 's/\/src/$/'|cut -d $ -f 1|uniq |tr "\n" "," |sed 's/,$/,client/'` clean install }
 
+amzn() { ssh -i ~/.ssh/tspkey.pem ec2-54-244-143-82.us-west-2.compute.amazonaws.com -l ec2-user }
+
 if [[ `uname` == 'Linux' ]]; then
 
   userl=`ps aux | grep ssh | grep priv | wc -l`

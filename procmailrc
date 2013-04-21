@@ -21,7 +21,7 @@ $MAILDIR/duplicates
 
 #now flush some spam out 
 :0  
-* ^Subject:.*(credit|cash|money|debt|sex|sale|loan|spam|JUNIT Test)
+* ^Subject:.*(cash|money|debt|sex|sale|loan|spam|JUNIT Test)
 $MAILDIR/spam
 
 #no more html messages
@@ -106,8 +106,10 @@ $MAILDIR/cloudstack-bugs
 $MAILDIR/cloudstack-devel
 
 :0
-* ^(To|Cc): .*(xen-users\@lists.xen.org)|\
-  ^(To|Cc): .*(xen-devel\@lists.xen.org)|\
+* ^(To|Cc): .*(xen-users@lists.xen.org).*|\
+  ^(To|Cc): .*(xen-users@lists.xensource.com).*|\
+  ^(To|Cc): .*(xen-devel@lists.xensource.com).*|\
+  ^(To|Cc): .*(xen-devel@lists.xen.org).*
 $MAILDIR/xen
 
 
