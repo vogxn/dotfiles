@@ -71,7 +71,9 @@ $MAILDIR/cloudstack-jenkins
 
 #testing in python
 :0
-* ^(To|Cc): .*(testing-in-python\@lists.idyll.org)
+* ^(To|Cc): .*(testing-in-python\@lists.idyll.org)|\
+  ^(To|Cc): .*(nose-users\@googlegroups.com)|\
+  ^(To|Cc): .*(nose-dev\@googlegroups.com)
 $MAILDIR/python
 
 #bugzilla
@@ -86,6 +88,10 @@ $MAILDIR/libcloud
 :0
 * ^From:.*(jenkins\@builds.apache.org)
 $MAILDIR/cloudstack-devel
+
+:0
+* ^(To|Cc): .*(private\@cloudstack.apache.org)
+$MAILDIR/mbox
 
 :0
 * ^To: .*(commits\@cloudstack.apache.org)
@@ -106,22 +112,25 @@ $MAILDIR/cloudstack-bugs
 $MAILDIR/cloudstack-devel
 
 :0
+* ^(To|Cc): .*(controller-dev@lists.opendaylight.org).*|\
+  ^(To|Cc): .*(controller-users@lists.opendaylight.org).*
+$MAILDIR/controller
+
+
+:0
 * ^(To|Cc): .*(xen-users@lists.xen.org).*|\
   ^(To|Cc): .*(xen-users@lists.xensource.com).*|\
   ^(To|Cc): .*(xen-devel@lists.xensource.com).*|\
   ^(To|Cc): .*(xen-devel@lists.xen.org).*
 $MAILDIR/xen
 
-
 :0
-* ^(To|Cc): .*(jenkinsci-users\@googlegroups.com)|\
-  ^(To|Cc): .*(jenkinsci-dev@googlegroups.com)
-$MAILDIR/jenkins-dev
+* ^(To|Cc): .*(packer-tool\@googlegroups.com).*
+$MAILDIR/packer
 
 :0
 * ^(To|Cc): .*(builds\@apache.org)
 $MAILDIR/infra
-
 
 #clogeny
 :0
@@ -133,6 +142,10 @@ $MAILDIR/mbox
 * ^From: .*(tsp\@apache.org|prasanna.santhanam\@citrix.com|Prasanna.Santhanam\@citrix.com)
 $MAILDIR/sent-mail
 
+# To me
+:0
+* ^(To|Cc): .*(tsp\@apache.org|prasanna.santhanam\@citrix.com|Prasanna.Santhanam\@citrix.com)
+$MAILDIR/mbox
 
 
 :0

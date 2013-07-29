@@ -157,3 +157,6 @@ alias m='mutt'
 alias xterm='xterm -rv -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24'
 
 export PATH=~/bin:$PATH
+source ~/.bashrc
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

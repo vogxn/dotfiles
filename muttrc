@@ -43,7 +43,7 @@ set mime_forward_rest=yes
 #mailboxes
 set folder=$HOME/mail
 # other mailboxes in ~/mail
-mailboxes ! +mbox +search +cloudstack-devel +python +xen +infra +jenkins-dev +cloudstack-jenkins +libcloud +gmail +cloudstack-bugs +git +cloudstack-git +bugs +duplicates +spam +support 
+mailboxes ! +mbox +search +cloudstack-devel +python +packer +infra +cloudstack-jenkins +gmail +cloudstack-bugs +cloudstack-git +duplicates +spam
 
 #mailing lists
 lists cloudstack-dev@incubator.apache.org
@@ -64,8 +64,8 @@ subscribe testing-in-python@lists.idyll.org
 lists the_wing_iiith@googlegroups
 subscribe the_wing_iiith@googlegroups
 
-lists support@cloud.com
-subscribe support@cloud.com
+lists packer-tool@googlegroups.com
+subscribe packer-tool@googlegroups.com
 
 lists qa@cloud.com
 subscribe qa@cloud.com
@@ -93,9 +93,8 @@ send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <prasanna.santhana
 #send-hook for gmail
 send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @cloudstack\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
-send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
-send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
-send-hook '~t @yahoo\.com$' 'my_hdr From: Prasanna <srivatsav.prasanna@gmail.com>'
+send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
+send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 
 
 #fcc-hook for cloud
