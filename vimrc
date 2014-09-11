@@ -1,11 +1,32 @@
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+Bundle 'tpope/vim-rails.git'
+Bundle 'majutsushi/tagbar'
+Bundle 'jnwhiteh/vim-golang'
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install (update) bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle commands are not allowed.
+
 syntax on
-execute pathogen#infect()
 filetype on 
-filetype plugin indent on
-
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
+colorscheme darkblue
 
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
@@ -18,9 +39,9 @@ set hidden          " Hide buffers when they are abandoned
 set nu              " Show line numbers by default
 inoremap ^? ^H
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Status line at the bottom of the buffer
@@ -42,24 +63,12 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 
-" Task lists
-map <leader>td <Plug>TaskList
-
-" Gundo - diff
-map <leader>g :GundoToggle<CR>
-
-" Don't use pyflakes quickfix
-let g:pyflakes_use_quickfix = 0
-let g:pep8_map='<leader>8'
-
 " Tab completion for python
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
-" GoTo and Refactoring
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
-
-" NERD Tree
-map <leader>n :NERDTreeToggle<CR>
+" tags
+:set tags=./tags;~/workspace/go/src
+" start tagger.sh
+:noremap <Leader>t :!~/.tagger.sh<CR>

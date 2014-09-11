@@ -94,6 +94,10 @@ $MAILDIR/cloudstack-devel
 $MAILDIR/mbox
 
 :0
+* ^(To|Cc): .*(security\@cloudstack.apache.org)
+$MAILDIR/mbox
+
+:0
 * ^To: .*(commits\@cloudstack.apache.org)
 $MAILDIR/cloudstack-git
 
@@ -125,7 +129,8 @@ $MAILDIR/controller
 $MAILDIR/xen
 
 :0
-* ^(To|Cc): .*(packer-tool\@googlegroups.com).*
+* ^(To|Cc): .*(packer-tool\@googlegroups.com).*|\
+  ^Subject: .*(packer).*
 $MAILDIR/packer
 
 :0

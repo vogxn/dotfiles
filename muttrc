@@ -43,7 +43,7 @@ set mime_forward_rest=yes
 #mailboxes
 set folder=$HOME/mail
 # other mailboxes in ~/mail
-mailboxes ! +mbox +search +cloudstack-devel +python +packer +infra +cloudstack-jenkins +gmail +cloudstack-bugs +cloudstack-git +duplicates +spam
+mailboxes ! +mbox +search +cloudstack-devel +python +packer +infra +gmail +duplicates +spam
 
 #mailing lists
 lists cloudstack-dev@incubator.apache.org
@@ -88,7 +88,7 @@ subscribe dev-support@cloud.com
 #send-hook '~t @cloud\.com$' 'my_hdr From: Prasanna Santhanam <prasanna@cloud.com>; my_hdr Reply-To: Prasanna Santhanam <prasanna.santhanam@citrix.com>'
 
 #send-hook for citrix 
-send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <prasanna.santhanam@citrix.com>'
+send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 
 #send-hook for gmail
 send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'

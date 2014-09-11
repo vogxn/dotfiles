@@ -1,13 +1,14 @@
 [user]
 	name = Prasanna Santhanam
-	email = tsp@apache.org
+	email = tsp@qubole.com
 
 [core]
 #  gitproxy = gitproxy
-  autocrlf = input
+#  autocrlf = input
   whitespace = trailing-space,space-before-tab
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/tsp/.gitignore_global
   editor = vim
+	autocrlf = input
 
 [color]
   diff = auto
@@ -49,3 +50,12 @@
   file-view-vpane-position = 674
 [rerere]
 	enabled = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
