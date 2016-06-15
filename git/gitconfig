@@ -8,7 +8,6 @@
   whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/tsp/.gitignore_global
   editor = vim
-	autocrlf = input
 
 [color]
   diff = auto
@@ -27,7 +26,7 @@
   ci = commit
   br = branch
   co = checkout
-  cp = cherry-pick -x -s
+  cp = cherry-pick -x
   cm = commit -s
   add-p = add -p
   df = diff --color
@@ -39,17 +38,6 @@
 [format]
   signoff = true
 
-[reviewboard]
-  url = https://reviews.apache.org
-
-[giggle]
-  main-window-maximized = false
-  main-window-geometry = 793x741+170+86
-  history-view-vpane-position = 435
-  main-window-view = HistoryView
-  file-view-vpane-position = 674
-[rerere]
-	enabled = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

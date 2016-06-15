@@ -72,3 +72,4 @@ set completeopt=menuone,longest,preview
 :set tags=./tags;~/workspace/go/src
 " start tagger.sh
 :noremap <Leader>t :!~/.tagger.sh<CR>
+
