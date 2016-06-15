@@ -1,6 +1,6 @@
 Installation
 
-    git clone git://github.com/bhaisaab/dotfiles.git
+    git clone git://github.com/vogxn/dotfiles.git
     git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 Create symlinks: (export SRC_ROOT=$PWD)
@@ -16,6 +16,7 @@ Create symlinks: (export SRC_ROOT=$PWD)
     ln -sf $SRC_ROOT/muttrc-colors ~/.muttrc-colors
     ln -sf $SRC_ROOT/git/gitconfig ~/.gitconfig
     ln -sf $SRC_ROOT/git/gitmessage ~/.gitmessage
+    ln -sf $SRC_ROOT/tmuxconf ~/.tmux.conf
 
 To uninstall: (cd <path/to/dotfiles>; export SRC_ROOT=$PWD)
 
