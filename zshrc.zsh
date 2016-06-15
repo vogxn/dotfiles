@@ -121,11 +121,12 @@ ZSH_THEME="apple"
 #ZSH_THEME="xiong-chiamiov"
 #ZSH_THEME="zhann"
 
-
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if [[ -r ~/.aliasrc ]]; then
+    source ~/.aliasrc
+fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -160,3 +161,14 @@ export PATH=~/bin:$PATH
 source ~/.bashrc
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export GOPATH=$HOME/workspace/go
+export GOROOT=/usr/local/Cellar/go/1.6/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/tsp/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/tsp/google-cloud-sdk/completion.zsh.inc'
