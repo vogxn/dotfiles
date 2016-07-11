@@ -7,7 +7,7 @@
 #  autocrlf = input
   whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/tsp/.gitignore_global
-  editor = vim
+  editor = "mvim -v"
 
 [color]
   diff = auto

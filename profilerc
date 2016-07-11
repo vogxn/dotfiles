@@ -1,0 +1,6 @@
+source ~/.bash_profile
+alias vim='mvim -v'
+alias vi='vim'
+alias tmux="TERM=screen-256color-bce tmux"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

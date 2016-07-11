@@ -167,8 +167,3 @@ export GOROOT=/usr/local/Cellar/go/1.6/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/tsp/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/tsp/google-cloud-sdk/completion.zsh.inc'
