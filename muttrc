@@ -43,56 +43,25 @@ set mime_forward_rest=yes
 #mailboxes
 set folder=$HOME/mail
 # other mailboxes in ~/mail
-mailboxes ! +mbox +search +cloudstack-devel +python +packer +infra +gmail +duplicates +spam
+mailboxes ! +mbox +apache +duplicates +spam
 
 #mailing lists
-lists cloudstack-dev@incubator.apache.org
-subscribe cloudstack-dev@incubator.apache.org
+lists dev@spark.apache.org
+subscribe dev@spark.apache.org
 
-lists dev@cloudstack.apache.org
-subscribe dev@cloudstack.apache.org
-
-lists cloudstack-users@incubator.apache.org
-subscribe cloudstack-users@incubator.apache.org
-
-lists users@cloudstack.apache.org
-subscribe users@cloudstack.apache.org
+lists users@spark.apache.org
+subscribe users@spark.apache.org
 
 lists testing-in-python@lists.idyll.org
 subscribe testing-in-python@lists.idyll.org
-
-lists the_wing_iiith@googlegroups
-subscribe the_wing_iiith@googlegroups
-
-lists packer-tool@googlegroups.com
-subscribe packer-tool@googlegroups.com
-
-lists qa@cloud.com
-subscribe qa@cloud.com
-
-lists idc-engg@cloud.com
-subscribe idc-engg@cloud.com
-
-lists engineering@cloud.com
-subscribe engineering@cloud.com
-
-lists supportteam@cloud.com
-subscribe supportteam@cloud.com
-
-lists dev-support@cloud.com
-subscribe dev-support@cloud.com
-
 
 #hooks (fcc-hooks, send-hooks)
 #send-hook for cloud
 #send-hook '~t @cloud\.com$' 'my_hdr From: Prasanna Santhanam <prasanna@cloud.com>; my_hdr Reply-To: Prasanna Santhanam <prasanna.santhanam@citrix.com>'
 
-#send-hook for citrix 
-send-hook '~t @citrix\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
-
 #send-hook for gmail
 send-hook '~t @apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
-send-hook '~t @cloudstack\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
+send-hook '~t @spark\.apache\.org$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @gmail\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 send-hook '~t @googlegroups\.com$' 'my_hdr From: Prasanna Santhanam <tsp@apache.org>'
 
@@ -133,8 +102,8 @@ set abort_nosubject=yes			#Abort, if message has no subject
 # the status-line, at the bottom, can be configured too.
 set status_format       = "Mutt @ %h: %f (%l) [%M/%m] [U=%u(%n,%o),post=%p,new=%b]"
 
-set realname		="Prasanna Santhanam"
-set from		="Prasanna Santhanam <Prasanna.Santhanam@citrix.com>"
+set realname		="Prasanna Srivatsav"
+set from		="Prasanna Srivatsav <tsp@apache.org>"
 set use_from		= yes
 set envelope_from	= yes
 set spoolfile		=$HOME/mail/mbox

@@ -7,7 +7,7 @@
 #  autocrlf = input
   whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/tsp/.gitignore_global
-  editor = "mvim -v"
+  editor = "vim"
 
 [color]
   diff = auto
@@ -47,3 +47,5 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[init]
+	templatedir = /Users/tsp/.git-templates

@@ -4,3 +4,6 @@ alias vi='vim'
 alias tmux="TERM=screen-256color-bce tmux"
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+

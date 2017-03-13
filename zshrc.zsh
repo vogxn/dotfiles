@@ -15,10 +15,10 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="wedisagree" ***
 #ZSH_THEME="afowler"
 #ZSH_THEME="alanpeabody"
-ZSH_THEME="apple"
+#ZSH_THEME="apple"
 #ZSH_THEME="arrow"
 #ZSH_THEME="aussiegeek"
-#ZSH_THEME="awesomepanda"
+ZSH_THEME="awesomepanda"
 #ZSH_THEME="bira"
 #ZSH_THEME="blinks"
 #ZSH_THEME="candy"
@@ -167,3 +167,30 @@ export GOROOT=/usr/local/Cellar/go/1.6/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# glcoud utils
+export PATH=$PATH:/opt/google-cloud-sdk/bin
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /opt/google-cloud-sdk/path.zsh.inc ]; then
+  source '/opt/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/opt/google-cloud-sdk/completion.zsh.inc'
+fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# jenv integration
+export JENV_ROOT=/usr/local/var/jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+unsetopt nomatch
+
+# zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
