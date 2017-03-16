@@ -20,21 +20,17 @@ Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'tpope/vim-rails.git'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'edkolev/tmuxline.vim'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
