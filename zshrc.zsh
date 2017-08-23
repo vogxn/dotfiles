@@ -163,7 +163,7 @@ source ~/.bashrc
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export GOPATH=$HOME/workspace/go
-export GOROOT=/usr/local/Cellar/go/1.6/libexec
+export GOROOT=/usr/local/Cellar/go/1.8/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 

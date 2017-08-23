@@ -1,6 +1,9 @@
 [user]
 	name = Prasanna Santhanam
-	email = tsp@qubole.com
+	email = tsp@apache.org
+
+[includeIf "gitdir:~/workspace/"]
+  path = ~/workspace/elastic/.gitconfig
 
 [core]
 #  gitproxy = gitproxy
