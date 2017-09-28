@@ -157,36 +157,11 @@ alias grep='grep --color=auto'
 alias m='mutt'
 alias xterm='xterm -rv -font -*-fixed-medium-r-*-*-18-*-*-*-*-*-iso8859-* -geometry 70x24'
 
-export PATH=~/bin:$PATH
-source ~/.bashrc
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# glcoud utils
-export PATH=$PATH:/opt/google-cloud-sdk/bin
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f /opt/google-cloud-sdk/path.zsh.inc ]; then
-  source '/opt/google-cloud-sdk/path.zsh.inc'
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/opt/google-cloud-sdk/completion.zsh.inc'
-fi
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# jenv integration
-export JENV_ROOT=/usr/local/var/jenv
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 unsetopt nomatch
 
