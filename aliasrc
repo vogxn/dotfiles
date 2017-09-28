@@ -9,8 +9,3 @@ if [[ `uname` == 'Linux' ]]; then
   fi
 
 fi
-
-if [[ `uname` == 'Darwin' ]]; then
-  export CATALINA_HOME=/usr/local/apache-tomcat-6.0.33
-fi
-

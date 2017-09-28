@@ -163,7 +163,7 @@ source ~/.bashrc
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export GOPATH=$HOME/workspace/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
