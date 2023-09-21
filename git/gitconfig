@@ -50,3 +50,11 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+
+# use SSH over HTTPS for all github clones
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "https://:x-oauth-basic@github.com"]
+[url "https://679d3a9bec4068d357ba65ef59952c8e16b4a642:x-oauth-basic@github.com"]
+[url "https://679d3a9bec4068d357ba65ef59952c8e16b4a642:x-oauth-basic@github.com"]
+[url "https://7327205922dcd69031b937c8c614f216939946c8:x-oauth-basic@github.com"]

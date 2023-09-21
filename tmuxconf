@@ -1,6 +1,10 @@
 source-file ~/tmuxlineconf
 
+set -g status-bg black
+set -g status-fg white
+
 set -g default-terminal "screen-256color"
+set -g status-right '#(TZ="GMT/UTC" date +%%H:%%M:%%S)'
 set -g status on
 set -g status-keys vi
 set -g history-limit 1000000
