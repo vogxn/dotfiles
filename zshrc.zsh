@@ -1,9 +1,3 @@
-# spaceship prompt
-source ~/.zplug/init.zsh
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
-
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
@@ -34,7 +28,7 @@ fi
 # COMPLETION_WAITING_DOTS="true"
 
 # Customize to your needs...
-alias ls='exa'
+# alias ls='exa'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
@@ -57,18 +51,11 @@ fi
 # google cloud sdk
 export PATH=$PATH:$HOME/.gcloud/google-cloud-sdk/bin
 
-# coinbase/assume-role
-source $(which assume-role)
-
 # ssh proxy cleanups
 alias ssh-exit="ls ~/.ssh/sockets/* 2>/dev/null | xargs -n1 -I{} ssh -S {} -O exit localhost"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
-
-
-zplug load
-
 
 ## Save history to 100000 commands
 SAVEHIST=100000

@@ -22,10 +22,10 @@ Plug 'godlygeek/tabular'
 Plug 'machakann/vim-highlightedyank'
 
 " Syntactic language support
-Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'cespare/vim-toml'
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
